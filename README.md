@@ -1,51 +1,31 @@
 # Electricity-Forecasting
 Electricity Forecasting Using Machine Learning and Deep Learning
 
-**Project Overview**
+**Objective**
 
-This project focuses on electricity forecasting using historical energy generation, electricity load, electricity pricing, and weather data.
+The objective of this project is to develop time-series forecasting models for predicting electricity prices using historical energy generation, electricity load, and weather data.
 
-The objective is to analyze historical electricity trends and develop predictive models capable of forecasting electricity prices by considering temporal patterns, energy generation characteristics, and weather conditions.
+The project integrates energy and weather datasets to create a multivariate time-series forecasting problem. It explores the relationship between electricity parameters and weather conditions and applies Machine Learning and Deep Learning techniques to improve forecasting accuracy.
 
-The project combines data preprocessing, exploratory data analysis (EDA), feature engineering, dimensionality reduction, and time-series forecasting using Machine Learning and Deep Learning techniques.
-
-**Objectives**
-
-Analyze historical electricity generation, load, and price patterns.
-
-Explore the relationship between electricity parameters and weather conditions.
-
-Perform data cleaning and preprocessing to handle missing values, duplicates, and outliers.
-
-Identify important features through correlation analysis.
-
-Apply Principal Component Analysis (PCA) for dimensionality reduction.
-
-Analyze time-series characteristics such as trend, seasonality, and stationarity.
-
-Develop and evaluate forecasting models using XGBoost and GRU.
-
-**Dataset Description**
+**About the Dataset**
 
 The project uses two datasets:
 
 1. Energy Dataset (energy_dataset.csv)
 
-Contains historical electricity-related information, including:
+Contains historical electricity data, including:
 
-Electricity generation from different sources (solar, wind, nuclear, hydro, fossil fuels, etc.).
+Electricity generation from different sources such as solar, wind, nuclear, hydro, and fossil fuels.
 
 Actual and forecasted electricity load.
 
-Day-ahead electricity prices.
-
-Actual electricity prices.
+Day-ahead and actual electricity prices.
 
 Timestamp information.
 
 2. Weather Dataset (weather_features.csv)
 
-Contains weather observations from five Spanish cities:
+Contains weather information from five Spanish cities:
 
 Valencia
 
@@ -57,87 +37,31 @@ Barcelona
 
 Seville
 
-Weather parameters include:
+Weather parameters include temperature, humidity, atmospheric pressure, wind speed, wind direction, rainfall, snowfall, and cloud coverage.
 
-Temperature
+Both datasets are integrated using timestamps to incorporate weather conditions into electricity forecasting.
 
-Atmospheric pressure
+**Method**
 
-Humidity
+The project consists of the following main steps:
 
-Wind speed and direction
+Data Loading and Exploration: Loading energy and weather datasets, examining data distributions, and analyzing feature correlations.
 
-Rainfall
+Data Preprocessing: Handling missing values, removing duplicates, identifying outliers, and integrating both datasets.
 
-Snowfall
+Feature Engineering: Extracting hour, weekday, month, and year from timestamps and combining selected energy generation features.
 
-Cloud coverage
+Time-Series Analysis: Applying Seasonal Decomposition, Augmented Dickey-Fuller (ADF) Test, ACF, and PACF to study trends, seasonality, and stationarity.
 
-The two datasets are integrated using their corresponding timestamps to incorporate weather conditions into electricity forecasting.
+Dimensionality Reduction: Applying MinMax Scaling and Principal Component Analysis (PCA) while retaining 80% cumulative variance.
 
-**Methodology**
+Model Building and Training: Developing forecasting models using XGBoost and GRU with a historical window of 24 observations.
 
-1. Data Preprocessing
-2.Exploratory Data Analysis (EDA)
-3. Feature Engineering
-4. Time-Series Analysis
-5. Dimensionality Reduction
-6. Model Development:
-Two forecasting models were implemented:
+Model Evaluation: Comparing actual and predicted electricity prices using Mean Absolute Error (MAE).
 
-**XGBoost Regressor**
+**Requirements**
 
-Used historical time-windowed observations as input.
-
-Reshaped sequential data into a two-dimensional format.
-
-Trained using training and validation datasets.
-
-Used Mean Absolute Error (MAE) as the evaluation metric.
-
-Implemented early stopping.
-
-**GRU (Gated Recurrent Unit)**
-
-Developed a sequential deep learning architecture.
-
-Used a GRU layer with 32 units.
-
-Applied Flatten and Dense layers.
-
-Incorporated Dropout (0.1) to reduce overfitting.
-
-Used Adam optimizer with Cosine Decay Restarts learning rate scheduling.
-
-Applied Early Stopping during training.
-
-**Model Performance**
-
-The dataset was divided chronologically into:
-
-Training: 80%
-
-Validation: 10%
-
-Testing: 10%
-
-A historical window of 24 observations was used for forecasting.
-
-**Model Test MAE (Normalized)**
-
-XGBoost-0.016
-
-GRU-0.018
-
-The results indicate that XGBoost achieved a slightly lower test MAE than the GRU model in the implemented experiment.
-
-Note: The reported MAE values are calculated on normalized target values, not the original electricity price scale.
-
-**Technologies and Libraries Used**
-
-Programming Language: Python
-
-Libraries:
+To run the project, install the following libraries:
 
 NumPy
 
@@ -156,3 +80,41 @@ XGBoost
 TensorFlow / Keras
 
 Statsmodels
+
+Install using:
+
+pip install numpy pandas matplotlib seaborn plotly scikit-learn xgboost tensorflow statsmodels
+
+**Motivation**
+
+Electricity demand and pricing are influenced by several factors, including energy generation patterns, consumption trends, and weather conditions.
+
+This project aims to explore these relationships and develop forecasting models that can:
+
+Analyze the impact of weather conditions on electricity generation and pricing.
+
+Identify temporal patterns in electricity prices.
+
+Compare actual electricity prices with day-ahead price predictions.
+
+Improve electricity price forecasting using Machine Learning and Deep Learning approaches.
+
+**Models Used**
+
+1. Machine Learning
+
+XGBoost Regressor
+
+2. Deep Learning
+
+GRU (Gated Recurrent Unit)
+
+**Results**
+
+The models were evaluated using Mean Absolute Error (MAE) on the normalized test dataset.
+
+**Model-Test MAE**
+
+XGBoost-0.016
+
+GRU-0.018
