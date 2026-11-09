@@ -82,7 +82,7 @@ The two datasets are integrated using their corresponding timestamps to incorpor
 3. Feature Engineering
 4. Time-Series Analysis
 5. Dimensionality Reduction
-6. Model Development
+6. Model Development:
 Two forecasting models were implemented:
 
 **XGBoost Regressor**
@@ -126,13 +126,9 @@ Model
 
 Test MAE (Normalized)
 
-XGBoost
+XGBoost-0.016
 
-0.016
-
-GRU
-
-0.018
+GRU-0.018
 
 The results indicate that XGBoost achieved a slightly lower test MAE than the GRU model in the implemented experiment.
 
