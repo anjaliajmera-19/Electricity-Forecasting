@@ -113,7 +113,7 @@ GRU (Gated Recurrent Unit)
 
 The models were evaluated using Mean Absolute Error (MAE) on the normalized test dataset.
 
-**Model-Test MAE**
+Model-Test MAE
 
 XGBoost-0.016
 
