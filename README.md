@@ -110,6 +110,7 @@ Incorporated Dropout (0.1) to reduce overfitting.
 Used Adam optimizer with Cosine Decay Restarts learning rate scheduling.
 
 Applied Early Stopping during training.
+
 **Model Performance**
 
 The dataset was divided chronologically into:
