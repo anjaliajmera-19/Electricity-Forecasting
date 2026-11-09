@@ -123,9 +123,7 @@ Testing: 10%
 
 A historical window of 24 observations was used for forecasting.
 
-**Model
-
-Test MAE (Normalized)**
+**Model Test MAE (Normalized)**
 
 XGBoost-0.016
 
