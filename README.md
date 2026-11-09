@@ -1,7 +1,7 @@
 # Electricity-Forecasting
 Electricity Forecasting Using Machine Learning and Deep Learning
 
-** Project Overview**
+**Project Overview**
 
 This project focuses on electricity forecasting using historical energy generation, electricity load, electricity pricing, and weather data.
 
@@ -9,7 +9,7 @@ The objective is to analyze historical electricity trends and develop predictive
 
 The project combines data preprocessing, exploratory data analysis (EDA), feature engineering, dimensionality reduction, and time-series forecasting using Machine Learning and Deep Learning techniques.
 
-** Objectives**
+**Objectives**
 
 Analyze historical electricity generation, load, and price patterns.
 
@@ -138,7 +138,7 @@ The results indicate that XGBoost achieved a slightly lower test MAE than the GR
 
 Note: The reported MAE values are calculated on normalized target values, not the original electricity price scale.
 
-** Technologies and Libraries Used**
+**Technologies and Libraries Used**
 
 Programming Language: Python
 
